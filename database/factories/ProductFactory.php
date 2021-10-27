@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,10 +20,10 @@ class ProductFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition():array
     {
         return [
-            'name' => $this->faker->name,
+            'title' => $this->faker->name
         ];
     }
 }

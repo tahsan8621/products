@@ -13,16 +13,15 @@ class CrateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products',function(Blueprint $table)
-        {
-            $table->increments('id');
-            $table->string('sku');
-            $table->string('title',250);
-            $table->longText('details');
-            $table->string('location');
-            $table->string('price');
-            $table->string('stock');
-            $table->string('warranty');
+        Schema::create('products', function (Blueprint $table) {
+            $table->id();
+            $table->string('sku')->nullable();
+            $table->string('title', 250)->nullable();
+            $table->longText('details')->nullable();
+            $table->string('location')->nullable();
+            $table->string('price')->nullable();
+            $table->string('stock')->nullable();
+            $table->string('warranty')->nullable();
             $table->timestamps();
         });
     }
@@ -34,6 +33,6 @@ class CrateProductsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('products');
     }
 }
